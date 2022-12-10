@@ -14,7 +14,7 @@
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="skybox.cpp" />
-    <ClCompile Include="Skybox1.cpp" />
+    <ClCompile Include="workspace.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point.h" />

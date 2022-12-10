@@ -24,7 +24,7 @@
     <ClCompile Include="skybox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Skybox1.cpp">
+    <ClCompile Include="workspace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -85,9 +85,6 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 	return TRUE;										// Initialization Went OK
 }
 
-void skybox()
-{
-}
 
 int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 {

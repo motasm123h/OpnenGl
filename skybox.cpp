@@ -72,4 +72,19 @@ void skybox::rip_of_the_skybox()
 	//glTexCoord2d(0, 1);
 	glVertex3d(-100000, 4000, 4000);
 	glEnd();
+
+
+	glColor3d(0,0.9,0);
+	//glBindTexture(GL_TEXTURE_2D, top);
+	glBegin(GL_QUADS);
+	//glTexCoord2d(0, 0);
+	glVertex3d(-100000,-4000, -4000);
+	//glTexCoord2d(1, 0);
+	glVertex3d(100000, -4000, -4000);
+	//glTexCoord2d(1, 1);
+	glVertex3d(100000, -4000, 4000);
+	//glTexCoord2d(0, 1);
+	glVertex3d(-100000, -4000, 4000);
+	glEnd();
+
 }
