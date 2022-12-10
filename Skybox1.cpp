@@ -1,30 +1,19 @@
-/*
- *		This Code Was Created By Jeff Molofee 2000
- *		A HUGE Thanks To Fredric Echols For Cleaning Up
- *		And Optimizing The Base Code, Making It More Flexible!
- *		If You've Found This Code Useful, Please Let Me Know.
- *		Visit My Site At nehe.gamedev.net
- */
-
 #include <windows.h>		// Header File For Windows
-#include <gl\gl.h>			// Header File For The OpenGL32 Library
-#include <gl\glu.h>			// Header File For The GLu32 Library
+#include <gl.h>			// Header File For The OpenGL32 Library
+#include <glu.h>			// Header File For The GLu32 Library
 #include <glaux.h>		// Header File For The Glaux Library
+#include <cmath>
+#include "texture.h"
+#include "skybox.h"
 
 HDC			hDC = NULL;		// Private GDI Device Context
-HGLRC		hRC = NULL;		// Permanent Rendering Context
+HGLRC		hRC = NULL;		// Permanent Rendering Cntext
 HWND		hWnd = NULL;		// Holds Our Window Handle
 HINSTANCE	hInstance;		// Holds The Instance Of The Application
 
 bool	keys[256];			// Array Used For The Keyboard Routine
 bool	active = TRUE;		// Window Active Flag Set To TRUE By Default
-bool	fullscreen = TRUE;	// Fullscreen Flag Set To Fullscreen Mode By Default
-
-int mouseX = 0, mouseY = 0;
-bool isClicked = 0, isRClicked = 0;
-
-GLfloat	rtri;				// Angle For The Triangle ( NEW )
-GLfloat	rquad;				// Angle For The Quad ( NEW )
+bool	fullscreen = FALSE;	// Fullscreen Flag Set To Fullscreen Mode By Default
 
 LRESULT	CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);	// Declaration For WndProc
 
@@ -40,12 +29,42 @@ GLvoid ReSizeGLScene(GLsizei width, GLsizei height)		// Resize And Initialize Th
 	glMatrixMode(GL_PROJECTION);						// Select The Projection Matrix
 	glLoadIdentity();									// Reset The Projection Matrix
 
-	// Calculate The Aspect Ratio Of The Window
-	gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 100.0f);
+														// Calculate The Aspect Ratio Of The Window
+	gluPerspective(45.0f, (GLfloat)width / (GLfloat)height, 0.1f, 200000.0f);
 
 	glMatrixMode(GL_MODELVIEW);							// Select The Modelview Matrix
 	glLoadIdentity();									// Reset The Modelview Matrix
 }
+
+double movX, movY, movZ;
+double lX, lY;
+
+void Camera()
+{
+	gluLookAt(movX, movY, movZ, lX, lY, -5, 0, 1, 0);
+	if (keys['D'])
+		movX += 5;
+	if (keys['A'])
+		movX -= 5;
+	if (keys['W'])
+		movY += 2;
+	if (keys['S'])
+		movY -= 2;
+	if (keys['Z'])
+		movZ += 2;
+	if (keys['X'])
+		movZ -= 2;
+	if (keys[VK_LEFT])
+		lX += 4;
+	if (keys[VK_RIGHT])
+		lX -= 4;
+	if (keys[VK_UP])
+		lY += 1;
+	if (keys[VK_DOWN])
+		lY -= 1;
+}
+
+int back, front, left, right, top;
 
 int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 {
@@ -55,96 +74,30 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 	glEnable(GL_DEPTH_TEST);							// Enables Depth Testing
 	glDepthFunc(GL_LEQUAL);								// The Type Of Depth Testing To Do
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);	// Really Nice Perspective Calculations
+
+	//glEnable(GL_TEXTURE_2D);
+	//back = LoadTexture("D:\\OpenGL Course\\Textures\\Skybox\\back.bmp");
+	//front = LoadTexture("D:\\OpenGL Course\\Textures\\Skybox\\front.bmp");
+	//left = LoadTexture("D:\\OpenGL Course\\Textures\\Skybox\\left.bmp");
+	//right = LoadTexture("D:\\OpenGL Course\\Textures\\Skybox\\right.bmp");
+	//top = LoadTexture("D:\\OpenGL Course\\Textures\\Skybox\\top.bmp");
+
 	return TRUE;										// Initialization Went OK
 }
-float  z = 0;
+
+void skybox()
+{
+}
+
 int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	// Clear Screen And Depth Buffer
-	glLoadIdentity();									// Reset The Current Modelview Matrix
-		/*void gluLookAt(GLdouble eyeX, GLdouble eyeY, GLdouble eyeZ,
-	GLdouble centerX, GLdouble centerY, GLdouble centerZ,
-	GLdouble upX, GLdouble upY, GLdouble upZ);*/
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glLoadIdentity();
+	glTranslated(0, 0, -15);
+	Camera();
+	skybox::rip_of_the_skybox();
 
-
-	gluLookAt(-10, 0, z, 15, 0, -10, 0, 1, 0);
-
-	if (keys[VK_UP])
-		z+=0.1;
-	if (keys[VK_DOWN])
-		z -= 0.1;
-	if (keys['A'])
-		rtri = 0;
-	if(isClicked)
-		rtri = 0;
-	/*glTranslatef(-1.5f, 0.0f, -6.0f);						// Move Left 1.5 Units And Into The Screen 6.0
-	glRotatef(rtri, 0.0f, 1.0f, 0.0f);						// Rotate The Triangle On The Y axis ( NEW )
-	glBegin(GL_TRIANGLES);								// Start Drawing A Triangle
-	glColor3f(1.0f, 0.0f, 0.0f);						// Red
-	glVertex3f(0.0f, 1.0f, 0.0f);					// Top Of Triangle (Front)
-	glColor3f(0.0f, 1.0f, 0.0f);						// Green
-	glVertex3f(-1.0f, -1.0f, 1.0f);					// Left Of Triangle (Front)
-	glColor3f(0.0f, 0.0f, 1.0f);						// Blue
-	glVertex3f(1.0f, -1.0f, 1.0f);					// Right Of Triangle (Front)
-	glColor3f(1.0f, 0.0f, 0.0f);						// Red
-	glVertex3f(0.0f, 1.0f, 0.0f);					// Top Of Triangle (Right)
-	glColor3f(0.0f, 0.0f, 1.0f);						// Blue
-	glVertex3f(1.0f, -1.0f, 1.0f);					// Left Of Triangle (Right)
-	glColor3f(0.0f, 1.0f, 0.0f);						// Green
-	glVertex3f(1.0f, -1.0f, -1.0f);					// Right Of Triangle (Right)
-	glColor3f(1.0f, 0.0f, 0.0f);						// Red
-	glVertex3f(0.0f, 1.0f, 0.0f);					// Top Of Triangle (Back)
-	glColor3f(0.0f, 1.0f, 0.0f);						// Green
-	glVertex3f(1.0f, -1.0f, -1.0f);					// Left Of Triangle (Back)
-	glColor3f(0.0f, 0.0f, 1.0f);						// Blue
-	glVertex3f(-1.0f, -1.0f, -1.0f);					// Right Of Triangle (Back)
-	glColor3f(1.0f, 0.0f, 0.0f);						// Red
-	glVertex3f(0.0f, 1.0f, 0.0f);					// Top Of Triangle (Left)
-	glColor3f(0.0f, 0.0f, 1.0f);						// Blue
-	glVertex3f(-1.0f, -1.0f, -1.0f);					// Left Of Triangle (Left)
-	glColor3f(0.0f, 1.0f, 0.0f);						// Green
-	glVertex3f(-1.0f, -1.0f, 1.0f);					// Right Of Triangle (Left)
-	glEnd();											// Done Drawing The Pyramid
-	*/
-	//glLoadIdentity();									// Reset The Current Modelview Matrix
-	glTranslatef(1.5f, 0.0f, -7.0f);						// Move Right 1.5 Units And Into The Screen 7.0
-	glRotatef(rquad, 1.0f, 1.0f, 1.0f);					// Rotate The Quad On The X axis ( NEW )
-	glBegin(GL_QUADS);									// Draw A Quad
-	glColor3f(0.0f, 1.0f, 0.0f);						// Set The Color To Green
-	glVertex3f(1.0f, 1.0f, -1.0f);					// Top Right Of The Quad (Top)
-	glVertex3f(-1.0f, 1.0f, -1.0f);					// Top Left Of The Quad (Top)
-	glVertex3f(-1.0f, 1.0f, 1.0f);					// Bottom Left Of The Quad (Top)
-	glVertex3f(1.0f, 1.0f, 1.0f);					// Bottom Right Of The Quad (Top)
-	glColor3f(1.0f, 0.5f, 0.0f);						// Set The Color To Orange
-	glVertex3f(1.0f, -1.0f, 1.0f);					// Top Right Of The Quad (Bottom)
-	glVertex3f(-1.0f, -1.0f, 1.0f);					// Top Left Of The Quad (Bottom)
-	glVertex3f(-1.0f, -1.0f, -1.0f);					// Bottom Left Of The Quad (Bottom)
-	glVertex3f(1.0f, -1.0f, -1.0f);					// Bottom Right Of The Quad (Bottom)
-	glColor3f(1.0f, 0.0f, 0.0f);						// Set The Color To Red
-	glVertex3f(1.0f, 1.0f, 1.0f);					// Top Right Of The Quad (Front)
-	glVertex3f(-1.0f, 1.0f, 1.0f);					// Top Left Of The Quad (Front)
-	glVertex3f(-1.0f, -1.0f, 1.0f);					// Bottom Left Of The Quad (Front)
-	glVertex3f(1.0f, -1.0f, 1.0f);					// Bottom Right Of The Quad (Front)
-	glColor3f(1.0f, 1.0f, 0.0f);						// Set The Color To Yellow
-	glVertex3f(1.0f, -1.0f, -1.0f);					// Top Right Of The Quad (Back)
-	glVertex3f(-1.0f, -1.0f, -1.0f);					// Top Left Of The Quad (Back)
-	glVertex3f(-1.0f, 1.0f, -1.0f);					// Bottom Left Of The Quad (Back)
-	glVertex3f(1.0f, 1.0f, -1.0f);					// Bottom Right Of The Quad (Back)
-	glColor3f(0.0f, 0.0f, 1.0f);						// Set The Color To Blue
-	glVertex3f(-1.0f, 1.0f, 1.0f);					// Top Right Of The Quad (Left)
-	glVertex3f(-1.0f, 1.0f, -1.0f);					// Top Left Of The Quad (Left)
-	glVertex3f(-1.0f, -1.0f, -1.0f);					// Bottom Left Of The Quad (Left)
-	glVertex3f(-1.0f, -1.0f, 1.0f);					// Bottom Right Of The Quad (Left)
-	glColor3f(1.0f, 0.0f, 1.0f);						// Set The Color To Violet
-	glVertex3f(1.0f, 1.0f, -1.0f);					// Top Right Of The Quad (Right)
-	glVertex3f(1.0f, 1.0f, 1.0f);					// Top Left Of The Quad (Right)
-	glVertex3f(1.0f, -1.0f, 1.0f);					// Bottom Left Of The Quad (Right)
-	glVertex3f(1.0f, -1.0f, -1.0f);					// Bottom Right Of The Quad (Right)
-	glEnd();											// Done Drawing The Quad
-
-	rtri += 0.2f;											// Increase The Rotation Variable For The Triangle ( NEW )
-	rquad -= 0.15f;										// Decrease The Rotation Variable For The Quad ( NEW )
-	return TRUE;										// Keep Going
+	return TRUE;
 }
 
 GLvoid KillGLWindow(GLvoid)								// Properly Kill The Window
@@ -189,13 +142,13 @@ GLvoid KillGLWindow(GLvoid)								// Properly Kill The Window
 }
 
 /*	This Code Creates Our OpenGL Window.  Parameters Are:					*
- *	title			- Title To Appear At The Top Of The Window				*
- *	width			- Width Of The GL Window Or Fullscreen Mode				*
- *	height			- Height Of The GL Window Or Fullscreen Mode			*
- *	bits			- Number Of Bits To Use For Color (8/16/24/32)			*
- *	fullscreenflag	- Use Fullscreen Mode (TRUE) Or Windowed Mode (FALSE)	*/
+*	title			- Title To Appear At The Top Of The Window				*
+*	width			- Width Of The GL Window Or Fullscreen Mode				*
+*	height			- Height Of The GL Window Or Fullscreen Mode			*
+*	bits			- Number Of Bits To Use For Color (8/16/24/32)			*
+*	fullscreenflag	- Use Fullscreen Mode (TRUE) Or Windowed Mode (FALSE)	*/
 
-BOOL CreateGLWindow(const char* title, int width, int height, int bits, bool fullscreenflag)
+BOOL CreateGLWindow(char* title, int width, int height, int bits, bool fullscreenflag)
 {
 	GLuint		PixelFormat;			// Holds The Results After Searching For A Match
 	WNDCLASS	wc;						// Windows Class Structure
@@ -241,7 +194,7 @@ BOOL CreateGLWindow(const char* title, int width, int height, int bits, bool ful
 		if (ChangeDisplaySettings(&dmScreenSettings, CDS_FULLSCREEN) != DISP_CHANGE_SUCCESSFUL)
 		{
 			// If The Mode Fails, Offer Two Options.  Quit Or Use Windowed Mode.
-			if (MessageBox(NULL, "The Requested Fullscreen Mode Is Not Supported By\nYour Video Card. Use Windowed Mode Instead?", "NeHe GL", MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
+			if (MessageBox(NULL, "The Requested Fullscreen Mode Is Not Supported By\nYour Video Card. Use Windowed Mode Instead?", "GL template", MB_YESNO | MB_ICONEXCLAMATION) == IDYES)
 			{
 				fullscreen = FALSE;		// Windowed Mode Selected.  Fullscreen = FALSE
 			}
@@ -268,7 +221,7 @@ BOOL CreateGLWindow(const char* title, int width, int height, int bits, bool ful
 
 	AdjustWindowRectEx(&WindowRect, dwStyle, FALSE, dwExStyle);		// Adjust Window To True Requested Size
 
-	// Create The Window
+																	// Create The Window
 	if (!(hWnd = CreateWindowEx(dwExStyle,							// Extended Style For The Window
 		"OpenGL",							// Class Name
 		title,								// Window Title
@@ -302,7 +255,7 @@ BOOL CreateGLWindow(const char* title, int width, int height, int bits, bool ful
 		0,											// Shift Bit Ignored
 		0,											// No Accumulation Buffer
 		0, 0, 0, 0,									// Accumulation Bits Ignored
-		16,											// 16Bit Z-Buffer (Depth Buffer)
+		16,											// 16Bit Z-Buffer (Depth Buffer)  
 		0,											// No Stencil Buffer
 		0,											// No Auxiliary Buffer
 		PFD_MAIN_PLANE,								// Main Drawing Layer
@@ -367,33 +320,16 @@ LRESULT CALLBACK WndProc(HWND	hWnd,			// Handle For This Window
 {
 	switch (uMsg)									// Check For Windows Messages
 	{
-	case WM_MOUSEMOVE:
-	{
-		mouseX = (int)LOWORD(lParam);
-		mouseY = (int)HIWORD(lParam);
-		isClicked = (LOWORD(wParam) & MK_LBUTTON) ? true : false;
-		isRClicked = (LOWORD(wParam) & MK_RBUTTON) ? true : false;
-		break;
-	}
-	case WM_LBUTTONUP:
-		isClicked = false; 	 break;
-	case WM_RBUTTONUP:
-		isRClicked = false;   break;
-	case WM_LBUTTONDOWN:
-		isClicked = true; 	break;
-	case WM_RBUTTONDOWN:
-		isRClicked = true;	break;
-
-
 	case WM_ACTIVATE:							// Watch For Window Activate Message
 	{
-		// LoWord Can Be WA_INACTIVE, WA_ACTIVE, WA_CLICKACTIVE,
-		// The High-Order Word Specifies The Minimized State Of The Window Being Activated Or Deactivated.
-		// A NonZero Value Indicates The Window Is Minimized.
-		if ((LOWORD(wParam) != WA_INACTIVE) && !((BOOL)HIWORD(wParam)))
+		if (!HIWORD(wParam))					// Check Minimization State
+		{
 			active = TRUE;						// Program Is Active
+		}
 		else
+		{
 			active = FALSE;						// Program Is No Longer Active
+		}
 
 		return 0;								// Return To The Message Loop
 	}
@@ -446,14 +382,14 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// Instance
 	MSG		msg;									// Windows Message Structure
 	BOOL	done = FALSE;								// Bool Variable To Exit Loop
 
-	// Ask The User Which Screen Mode They Prefer
-	if (MessageBox(NULL, "Would You Like To Run In Fullscreen Mode?", "Start FullScreen?", MB_YESNO | MB_ICONQUESTION) == IDNO)
+														// Ask The User Which Screen Mode They Prefer
+														//if (MessageBox(NULL,"Would You Like To Run In Fullscreen Mode?", "Start FullScreen?",MB_YESNO|MB_ICONQUESTION)==IDNO)
 	{
 		fullscreen = FALSE;							// Windowed Mode
 	}
 
 	// Create Our OpenGL Window
-	if (!CreateGLWindow("NeHe's Solid Object Tutorial", 640, 480, 16, fullscreen))
+	if (!CreateGLWindow("OpenGL template", 640, 480, 16, fullscreen))
 	{
 		return 0;									// Quit If Window Was Not Created
 	}
@@ -475,13 +411,17 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// Instance
 		else										// If There Are No Messages
 		{
 			// Draw The Scene.  Watch For ESC Key And Quit Messages From DrawGLScene()
-			if ((active && !DrawGLScene()) || keys[VK_ESCAPE])	// Active?  Was There A Quit Received?
+			if (active)								// Program Active?
 			{
-				done = TRUE;							// ESC or DrawGLScene Signalled A Quit
-			}
-			else									// Not Time To Quit, Update Screen
-			{
-				SwapBuffers(hDC);					// Swap Buffers (Double Buffering)
+				if (keys[VK_ESCAPE])				// Was ESC Pressed?
+				{
+					done = TRUE;						// ESC Signalled A Quit
+				}
+				else								// Not Time To Quit, Update Screen
+				{
+					DrawGLScene();					// Draw The Scene
+					SwapBuffers(hDC);				// Swap Buffers (Double Buffering)
+				}
 			}
 
 			if (keys[VK_F1])						// Is F1 Being Pressed?
@@ -489,8 +429,8 @@ int WINAPI WinMain(HINSTANCE	hInstance,			// Instance
 				keys[VK_F1] = FALSE;					// If So Make Key FALSE
 				KillGLWindow();						// Kill Our Current Window
 				fullscreen = !fullscreen;				// Toggle Fullscreen / Windowed Mode
-				// Recreate Our OpenGL Window
-				if (!CreateGLWindow("NeHe's Solid Object Tutorial", 640, 480, 16, fullscreen))
+														// Recreate Our OpenGL Window
+				if (!CreateGLWindow("OpenGL template", 640, 480, 16, fullscreen))
 				{
 					return 0;						// Quit If Window Was Not Created
 				}
