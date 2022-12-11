@@ -1,16 +1,17 @@
-﻿Build started 12/10/2022 1:05:52 PM.
+﻿Build started 12/11/2022 6:18:28 PM.
      1>Project "D:\opne_gl_project\Train_Project\Train_Project\Train_Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt skybox.cpp
-         skybox.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt workspace.cpp
+         workspace.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\opne_gl_project\Train_Project\Debug\Train_Project.exe" /INCREMENTAL /NOLOGO GLAUX.lib GLU32.lib glut.lib OPENGL32.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\opne_gl_project\Train_Project\Debug\Train_Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\opne_gl_project\Train_Project\Debug\Train_Project.lib" /MACHINE:X86 Debug\camera.obj
          Debug\Point.obj
          Debug\skybox.obj
+         Debug\texture.obj
          Debug\workspace.obj
          Train_Project.vcxproj -> D:\opne_gl_project\Train_Project\Debug\Train_Project.exe
      1>Done Building Project "D:\opne_gl_project\Train_Project\Train_Project\Train_Project.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.10
+Time Elapsed 00:00:01.22

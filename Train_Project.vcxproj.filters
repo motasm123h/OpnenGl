@@ -27,12 +27,18 @@
     <ClCompile Include="workspace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

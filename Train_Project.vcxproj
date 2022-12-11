@@ -14,11 +14,13 @@
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="skybox.cpp" />
+    <ClCompile Include="texture.cpp" />
     <ClCompile Include="workspace.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Point.h" />
     <ClInclude Include="skybox.h" />
+    <ClInclude Include="texture.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6B9C3EB7-6B0C-4625-97D4-AE3C9081CD28}</ProjectGuid>
