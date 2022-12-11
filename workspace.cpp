@@ -43,28 +43,28 @@ void Camera()
 {
 	gluLookAt(movX, movY, movZ, lX, lY, -5, 0, 1, 0);
 	if (keys['D'])
-		movX += 100;
+		movX += 10;
 	if (keys['A'])
-		movX -= 100;
+		movX -= 10;
 	if (keys['W'])
-		movY += 50;
+		movY += 5;
 	if (keys['S'])
-		movY -= 50;
+		movY -= 5;
 	if (keys['Z'])
-		movZ += 50;
+		movZ += 5;
 	if (keys['X'])
-		movZ -= 50;
+		movZ -= 5;
 	if (keys[VK_LEFT])
 		lX += 80;
 	if (keys[VK_RIGHT])
-		lX -= 70;
+		lX -= 7;
 	if (keys[VK_UP])
-		lY += 10;
+		lY += 1;
 	if (keys[VK_DOWN])
-		lY -= 50;
+		lY -= 5;
 }
 
-int back, front, left, right, top;
+int back, front, left, right, top , image;
 
 int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 {
@@ -81,7 +81,8 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 	left = LoadTexture("left.bmp",255);
 	right = LoadTexture("right.bmp",255);
 	top = LoadTexture("top.bmp",255);
-
+	image = LoadTexture("woodeen.bmp",255);
+	
 	return TRUE;										// Initialization Went OK
 }
 
@@ -167,10 +168,6 @@ void skybox()
 	glEnd();
 }
 
-
-
-
-
 void Draw_Skybox(float x, float y, float z, float width, float height, float length)
 {
 	// Center the Skybox around the given x,y,z position
@@ -250,6 +247,145 @@ void Draw_Skybox(float x, float y, float z, float width, float height, float len
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 }
 
+void Draw_train()
+{
+
+	//**the first side of the train
+	glBindTexture(GL_TEXTURE_2D,image);
+	glBegin(GL_QUADS); //front
+	glTexCoord2d(0,0);
+	glVertex3f(-500.0f, 0.0f, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(500.0f, 0.0f, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(500.0f, 1000.0f, 0.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-500.0f, 1000.0f, 0.0f);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500.0f, 350.0f, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(660.0f, 350.0f, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(660.0f, 1000.0f, 0.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(500.0f, 1000.0f, 0.0f);
+
+	
+	glTexCoord2d(0,0);
+	glVertex3f(660.0f, 0.0f, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(760.0f, 0.0f, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(760.0f, 1000.0f, 0.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(660.0f, 1000.0f, 0.0f);
+	glEnd();
+
+
+
+
+	//***the second side of the train
+	glBindTexture(GL_TEXTURE_2D,image);
+	glBegin(GL_QUADS); //back
+	glTexCoord2d(0,0);
+	glVertex3f(-500.0f, 0.0f, 1400.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(500.0f, 0.0f, 1400.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(500.0f, 1000.0f, 1400.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-500.0f, 1000.0f, 1400.0f);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500.0f, 350.0f, 1400.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(660.0f, 350.0f, 1400.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(660.0f, 1000.0f, 1400.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(500.0f, 1000.0f, 1400.0f);
+
+	glTexCoord2d(0,0);
+	glVertex3f(660.0f, 0.0f, 1400.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(760.0f, 0.0f, 1400.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(760.0f, 1000.0f, 1400.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(660.0f, 1000.0f, 1400);
+	glEnd();
+
+
+
+	
+	glBindTexture(GL_TEXTURE_2D,image);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-500.0f, 0.0f, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(-500.0f, 0.0f, 1400.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-500.0f, 1000.0f, 1400.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-500.0f, 1000.0f, 0.0f);
+	glEnd();
+
+	glBindTexture(GL_TEXTURE_2D,image);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(760.0f, 0.0f, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(760.0f, 0.0f, 650.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(760.0f, 1000.0f, 650.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(760.0f, 1000.0f, 0.0f);
+
+	glTexCoord2d(0,0);
+	glVertex3f(760.0f, 0.0f, 850.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(760.0f, 0.0f, 1400.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(760.0f, 1000.0f, 1400.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(760.0f, 1000.0f, 850.0f);
+
+	glTexCoord2d(0,0);
+	glVertex3f(760.0f, 400.0f, 650.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(760.0f, 400.0f, 850.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(760.0f, 1000.0f, 850.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(760.0f, 1000.0f, 650.0f);
+	glEnd();
+    
+
+	glBindTexture(GL_TEXTURE_2D,image);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-500.0f, 1000.0f, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(760.0f, 1000.0f, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(760.0f, 1000.0f, 1400.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-500.0f, 1000.0f, 1400.0f);
+	glEnd();
+
+	glBindTexture(GL_TEXTURE_2D,image);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-500.0f, 0.0f, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(760.0f, 0, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(760.0f, 0, 1400.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-500.0f, 0, 1400.0f);
+	glEnd();
+}
 
 
 
@@ -261,7 +397,9 @@ int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	glTranslated(0, 0, -15);
 	Camera();
 	//skybox::rip_of_the_skybox();
+	Draw_train();
 	skybox();
+	
 
 	//Draw_Skybox(-5, 0, -50, 150, 150, 200);
 	return TRUE;
