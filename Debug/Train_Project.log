@@ -1,8 +1,15 @@
-﻿Build started 12/11/2022 7:59:41 PM.
+﻿Build started 12/13/2022 1:01:04 PM.
      1>Project "D:\opne_gl_project\Train_Project\Train_Project\Train_Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt workspace.cpp
          workspace.cpp
+     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(30): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(31): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(344): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(401): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(405): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(413): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(417): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\opne_gl_project\Train_Project\Debug\Train_Project.exe" /INCREMENTAL /NOLOGO GLAUX.lib GLU32.lib glut.lib OPENGL32.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\opne_gl_project\Train_Project\Debug\Train_Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\opne_gl_project\Train_Project\Debug\Train_Project.lib" /MACHINE:X86 Debug\camera.obj
          Debug\Point.obj
@@ -14,4 +21,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.28
+Time Elapsed 00:00:02.24
