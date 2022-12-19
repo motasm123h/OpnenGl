@@ -5,7 +5,7 @@
 #include <fstream>
 #include <math.h>
 
-#include <camera.h>
+#include "camera.h"
 
 #include <stdlib.h>   /* for exit */
 
@@ -157,7 +157,6 @@ void Camera::MoveUpward( GLfloat Distance )
 {
 	Position = Position + (Up*Distance);
 }
-
 
 void Camera::SetRotateX(GLfloat Angle)
 {
