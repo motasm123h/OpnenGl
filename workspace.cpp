@@ -1280,21 +1280,7 @@ int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	glPopMatrix();
 
 	
-    //glTranslated(-8,0,-4);
-    //glTranslatef(0,0,Tzval);
-   // ownTranslatef(0,0,Tzval);
-    
-
-
-	
-	//glPushMatrix();
-	//Draw_train();
-	//glPopMatrix();
-	//
-
-
-
-	
+		
 	return TRUE;
 }
 
