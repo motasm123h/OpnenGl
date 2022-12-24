@@ -88,9 +88,9 @@ void Camera()
 	if (keys[VK_RIGHT])
 		lX -= 20;
 	if (keys[VK_UP])
-		lY += 4;
+		lY += 10;
 	if (keys[VK_DOWN])
-		lY -= 4;
+		lY -= 10;
 }
 
 int wood;
@@ -101,7 +101,9 @@ int door;
 int book;
 int radio;
 int paint;
+
 int carpet;
+
 int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 {
 	glShadeModel(GL_SMOOTH);							// Enable Smooth Shading
@@ -208,6 +210,17 @@ void skybox()
 	glTexCoord2d(1, 1);
 	glVertex3d(20000, -8000, 8000);
 	glTexCoord2d(0, 1);
+	glVertex3d(-20000, -8000, 8000);
+	glEnd();
+
+	glBegin(GL_QUADS);
+	
+	glVertex3d(-20000,-8000, -8000);
+
+	glVertex3d(20000,-8000, -8000);
+
+	glVertex3d(20000, -8000, 8000);
+
 	glVertex3d(-20000, -8000, 8000);
 	glEnd();
 }
@@ -1011,6 +1024,305 @@ void draw_paintig(){
 
 
 }
+void any(){glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,1);
+	glVertex3f(500,50,0);
+	glTexCoord2d(0,1);
+	glVertex3f(400,50,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,50,100);
+	glTexCoord2d(0,1);
+	glVertex3f(500,50,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,50,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,50,0);
+	glEnd();
+
+	glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,50,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,50,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glVertex3f(500,50,0);
+	glVertex3f(500,50,100);
+	glVertex3f(400,50,100);
+	glVertex3f(400,50,0);
+
+	glEnd();}
+void carpett(){
+	glBindTexture(GL_TEXTURE_2D,carpet);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+   glVertex3d(300,0,0);
+   glTexCoord2d(1,0);
+    glVertex3d(950,0,0);
+	glTexCoord2d(1,1);
+	glVertex3d(950,0,350);
+	glTexCoord2d(0,1);
+    glVertex3d(300,0,350);
+	  
+	glEnd();}
+
+void chair(){glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,1);
+	glVertex3f(500,25,0);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(500,25,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,0);
+	glEnd();
+
+	
+	
+
+	glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glVertex3f(500,25,0);
+	glVertex3f(500,25,100);
+	glVertex3f(400,25,100);
+	glVertex3f(400,25,0);
+	glEnd();
+
+	
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,0);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-50,0);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,10);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-50,10);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,10);
+
+	glTexCoord2d(0,0);
+	glVertex3f(410,-50,0);
+	glTexCoord2d(1,0);
+	glVertex3f(410,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(410,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,-50,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glEnd();
+
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(490,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,0);
+	glTexCoord2d(1,1);
+	glVertex3f(500,-50,0);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(490,0,10);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(500,-50,10);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,10);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,-50,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(500,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(490,-50,0);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(490,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(490,0,0);
+
+	glEnd();
+
+	
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(490,0,90);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,90);
+	glTexCoord2d(1,1);
+	glVertex3f(500,-50,90);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(490,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,-50,100);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,-50,90);
+	glTexCoord2d(1,0);
+	glVertex3f(500,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(490,-50,90);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(490,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(490,0,90);
+
+	glEnd();
+	
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,90);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,90);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-50,90);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-50,100);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(410,-50,90);
+	glTexCoord2d(1,0);
+	glVertex3f(410,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(410,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,-50,90);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,90);
+
+	glEnd();
+
+	glBegin(GL_QUADS);
+    glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,1);
+	glVertex3f(500,120,0);
+	glTexCoord2d(0,1);
+	glVertex3f(400,120,0);
+	glEnd();}
+
+int ll=0;
 int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -1020,10 +1332,17 @@ int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	Camera();
 	glTranslated(0, 0, -15);
 	//the skybox
+	glPushMatrix();
+	//glTranslated(ll,0,0);
+	glScaled(4,4,4);
 	skybox();
+	//ll-=10;
+	
+	glPopMatrix();
+
 	
 	//the first train
-	glTranslated(0,100,-350);
+
 	glPushMatrix();
     Draw_train();
   
@@ -1062,23 +1381,12 @@ glTranslated(-1380,300,200);
 	glPopMatrix();
 
 	glTranslated(-250,0,200);
-	glBindTexture(GL_TEXTURE_2D,carpet);
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-   glVertex3d(300,0,0);
-   glTexCoord2d(1,0);
-    glVertex3d(950,0,0);
-	glTexCoord2d(1,1);
-	glVertex3d(950,0,350);
-	glTexCoord2d(0,1);
-    glVertex3d(300,0,350);
-	  
-	glEnd();
+	carpett();
 
-    
 
-	
-	
+	//CHAIR
+    glTranslated(0,50,0);
+	chair();
 	
 	/////////////
 	/*
@@ -1118,6 +1426,7 @@ glTranslated(-1380,300,200);
 	*/
 
 	glPopMatrix();
+	 
 	
 	
 	//Wheel(Point(0,0,0),10.0);
