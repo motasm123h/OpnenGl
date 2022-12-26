@@ -1,91 +1,87 @@
-﻿Build started 12/24/2022 4:48:03 PM.
+﻿Build started 12/27/2022 12:56:43 AM.
      1>Project "D:\opne_gl_project\Train_Project\Train_Project\Train_Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt workspace.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt skybox.cpp workspace.cpp
          workspace.cpp
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(31): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(32): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(154): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(155): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(156): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(281): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(329): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(389): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(526): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(575): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(624): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(641): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(777): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(781): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(783): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(785): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(787): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(789): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(792): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(794): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(796): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(798): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(802): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(804): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(806): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(808): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(812): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(814): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(815): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(817): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(821): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(823): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(825): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(827): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(831): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(833): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(835): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(837): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(854): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(856): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(858): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(860): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(864): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(866): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(868): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(870): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(874): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(876): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(878): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(880): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(887): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(889): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(891): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(893): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(897): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(899): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(901): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(903): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(907): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(909): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(911): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(913): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(928): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(938): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(952): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(973): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(988): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1001): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1013): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1025): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1039): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1054): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1069): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1082): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1094): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1106): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1120): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1136): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1151): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1164): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1176): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1188): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
-     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(1202): warning C4244: 'argument' : conversion from 'float' to 'GLuint', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\workspace.cpp(208): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+         skybox.cpp
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(20): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(22): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(24): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(26): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(31): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(33): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(35): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(39): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(41): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(43): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(45): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(55): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(57): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(59): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(61): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(70): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(72): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(74): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(76): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(79): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(81): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(83): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(85): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(89): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(91): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(93): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(95): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(105): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(107): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(109): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(111): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(125): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(127): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(129): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(131): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(139): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(141): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(143): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(145): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(148): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(150): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(152): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(154): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(157): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(159): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(161): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(163): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(196): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(198): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(200): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(202): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(212): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(214): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(216): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(218): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(227): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(229): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(231): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(233): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(241): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(243): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(245): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(247): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(256): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(258): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(260): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(262): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(269): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(271): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(273): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(275): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(282): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(284): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(286): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>d:\opne_gl_project\train_project\train_project\skybox.cpp(288): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\opne_gl_project\Train_Project\Debug\Train_Project.exe" /INCREMENTAL /NOLOGO GLAUX.lib GLU32.lib glut.lib OPENGL32.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\opne_gl_project\Train_Project\Debug\Train_Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\opne_gl_project\Train_Project\Debug\Train_Project.lib" /MACHINE:X86 Debug\camera.obj
          Debug\Point.obj
@@ -97,4 +93,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.15
+Time Elapsed 00:00:02.62
