@@ -7,10 +7,17 @@ public:
 	static void skyboxfirst(int x ,int y , int z ,int front , int back ,int left , int right , int top ,int bottm);
 	static void skyboxsecond(int x ,int y , int z ,int front , int back ,int left , int right , int top ,int bottm);
 	static void Draw_train(int image,int x, int y,int z ,int zdoor2 ,int door,int xdoor1);
-	static void Draw_train_two();
-	static void DrawSeat();
+	static void Draw_train_two(int image,int x, int y,int z ,int zdoor2 ,int door,int xdoor1);
+	static void DrawSeat(int chairs,int x,int y,int z);
 	static void DrawSmallSeat();
 	static void DrawChairsBracket();
+	static void Wheel(Point center, float radius);
+	static void test1(float width, float hight, float depth,int iron,int wall);
+	static void wheels(float distance, float width, Point center, float radius);
+	static void test(float width, float hight, float depth ,int wall);
+	static void drawcube(float x, float y, float z, int texture, int isInside);
+	static void bed(float WIDTH, float HIGHT, float DEPTH, int textureLeg, int TextureBed);
+	
 	static void DrawChairs();
 	static void train();
 	static void TV();
