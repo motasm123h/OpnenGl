@@ -38,14 +38,17 @@ int back, front, left, right, top , image,pes;
 GLfloat x = 0.0;
 GLfloat y = 0.0;
 GLfloat z = 20.0;
+GLfloat color[]={1,80,70,4};
 
 double movX, movY, movZ;
 double lX, lY;
 double th = 0;
 double tmax = 0;
 double xdoor1, zdoor2;
-int wood=0 , iron=0,ironwall=0,glass=0,controll=0,chairs = 0,topChairs=0,door=0;
+int wood=0 , iron=0,ironwall=0,glass=0,controll=0,chairs = 0,topChairs=0,door=0,grass;
 int wintop,winbottm,winleft,winright,winfront,winback;
+int springtop,springbottm,sringleft,springright,springfront,springback;
+int auttop,autbottm,autleft,autright,autfront,autback;
 
 
 LRESULT	CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -76,17 +79,17 @@ void Camera()
 {
 	gluLookAt(movX, movY, movZ, lX, lY, -5, 0, 1, 0);
 	if (keys['D'])
-		movX += 10;
+		movX += 300;
 	if (keys['A'])
-		movX -= 10;
+		movX -= 300;
 	if (keys['W'])
-		movY += 5;
+		movY += 10;
 	if (keys['S'])
-		movY -= 5;
+		movY -= 10;
 	if (keys['Z'])
-		movZ += 5;
+		movZ += 15;
 	if (keys['X'])
-		movZ -= 5;
+		movZ -= 15;
 	if (keys[VK_LEFT])
 		lX += 80;
 	if (keys[VK_RIGHT])
@@ -148,6 +151,8 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 	ironwall = LoadTexture("ironwall.bmp",255);
 	door=LoadTexture("door.bmp",255);
 	chairs=LoadTexture("chairs.bmp",255);
+	grass=LoadTexture("grass.bmp",25);
+
 	//winter
 	wintop=LoadTexture("wintop.bmp",255);
 	winbottm=LoadTexture("winbottm.bmp",255);
@@ -155,7 +160,20 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 	winright=LoadTexture("winright.bmp",255);
 	winback=LoadTexture("winback.bmp",255);
 	winfront=LoadTexture("winfront.bmp",255);
-
+	//spring
+	springtop=LoadTexture("springtop.bmp",255);
+	springbottm=LoadTexture("springbottm.bmp",255);
+	sringleft=LoadTexture("springleft.bmp",255);
+	springright=LoadTexture("springright.bmp",255);
+	springfront=LoadTexture("springfront.bmp",255);
+	springback=LoadTexture("springback.bmp",255);
+	//aut
+	auttop=LoadTexture("auttop.bmp",255);
+	autbottm=LoadTexture("autbottm.bmp",255);
+	autleft=LoadTexture("autleft.bmp",255);
+	autright=LoadTexture("autright.bmp",255);
+	autfront=LoadTexture("autfront.bmp",255);
+	autback=LoadTexture("autback.bmp",255);
 
 	return TRUE;										// Initialization Went OK
 }
@@ -193,28 +211,44 @@ void drawhead()
 }
 GLUquadric* quadric=gluNewQuadric();
 int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
-{
+{	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslated(0, 0, -15);
 	Camera();
 	moveDoor();
 
-
-
-		//drawhead();
+	//drawhead();
 	glPushMatrix();	
 	glTranslated(-8000,0,0);
 	skybox::Draw_train(ironwall,door,zdoor2,xdoor1,2000,1000,700);
 	glPopMatrix();
 	glPushMatrix();
+	/*
+	glEnable(GL_FOG);
+	glFogfv(GL_FOG_COLOR,color);
+	glFogi(GL_FOG_MODE,GL_EXP);
+	glFogf(GL_FOG_START,100);
+	glFogf(GL_FOG_END,4000);
+	glDisable(GL_FOG);
+	*/
+
 	skybox::skyboxfirst(12000,4000,8000,winback,winleft,winright,winfront,wintop,winbottm);
 	glPopMatrix();
 	glPushMatrix();
 	glTranslated(25000,0,0);
-	skybox::skyboxsecond(12000,4000,8000,winback,winleft,winright,winfront,wintop,winbottm);
+	/*glEnable(GL_FOG);
+	glFogfv(GL_FOG_COLOR,color);
+	glFogi(GL_FOG_MODE,GL_EXP);
+	glFogf(GL_FOG_START,1000);
+	glFogf(GL_FOG_END,4000);
+	glDisable(GL_FOG);*/
+	skybox::skyboxsecond(12000,4000,8000,springfront,springback,springright,sringleft,springtop,springbottm);
 	glPopMatrix();
-	
+	glPushMatrix();
+	glTranslated(50000,0,0);
+	skybox::skyboxsecond(12000,4000,8000,autfront,autback,autright,autleft,auttop,grass);
+	glPopMatrix();
 	
 		
 	return TRUE;

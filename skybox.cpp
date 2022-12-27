@@ -115,8 +115,6 @@ void skybox::Draw_train(int image,int door,int zdoor2 ,int xdoor1,int x,int y,in
 
 	//****
 
-
-
 	//*****
 	//the back of the train
 	glBindTexture(GL_TEXTURE_2D,image);
@@ -893,6 +891,21 @@ void skybox::TV()
 
 void skybox::skyboxfirst(int x ,int y, int z ,int front ,int back ,int right ,int left ,int top ,int bottm)
 {
+	
+	
+	glBindTexture(GL_TEXTURE_2D, front);
+	glBegin(GL_QUADS);
+	glTexCoord2d(1, 0);
+	glVertex3d(x, -y, z);
+	glTexCoord2d(0, 0);
+	glVertex3d(x, -y, -z);
+	glTexCoord2d(0, 1);
+	glVertex3d(x, y, -z);
+	glTexCoord2d(1, 1);
+	glVertex3d(x, y, z);
+	glEnd();
+
+	
 	glBindTexture(GL_TEXTURE_2D, back);
 	glBegin(GL_QUADS);
 	glTexCoord2d(0, 0);
@@ -931,17 +944,6 @@ void skybox::skyboxfirst(int x ,int y, int z ,int front ,int back ,int right ,in
 	glVertex3d(-x, y, z);
 	glEnd();
 
-	glBindTexture(GL_TEXTURE_2D, front);
-	glBegin(GL_QUADS);
-	glTexCoord2d(1, 0);
-	glVertex3d(x, -y, z);
-	glTexCoord2d(0, 0);
-	glVertex3d(x, -y, -z);
-	glTexCoord2d(0, 1);
-	glVertex3d(x, y, -z);
-	glTexCoord2d(1, 1);
-	glVertex3d(x, y, z);
-	glEnd();
 
 	glBindTexture(GL_TEXTURE_2D, top);
 	glBegin(GL_QUADS);
