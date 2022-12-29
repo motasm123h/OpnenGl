@@ -159,6 +159,8 @@ void skybox::Draw_train(int image,int door,int zdoor2 ,int xdoor1,int x,int y,in
 	glVertex3f(x, y, z/2+50);
 	glTexCoord2d(1,0);
 	glVertex3f(x, y, z/3);
+
+	glEnd();
 	glPopMatrix();
 
 	
@@ -166,25 +168,6 @@ void skybox::Draw_train(int image,int door,int zdoor2 ,int xdoor1,int x,int y,in
 	
 	//****
 
-	//the front door new version
-	glPushMatrix();
-	/*glBindTexture(GL_TEXTURE_2D,door);
-	glTranslated(0,0,zdoor2);
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-	glVertex3f(14944444448.0f, 400.0f, 200.0f);
-	glTexCoord2d(0,1);
-	glVertex3f(148888888898.0f, 400.0f, 400.0f);
-	glTexCoord2d(1,1);
-	glVertex3f(14988888888.0f, 0, 400.0f);
-	glTexCoord2d(1,0);
-	glVertex3f(148888888898.0f, 0, 200.0f);
-	glEnd();*/
-	glPopMatrix();
-	
-
-
-	///*****
 	//the front door new version
 	glPushMatrix();
 	glBindTexture(GL_TEXTURE_2D,door);
@@ -200,7 +183,7 @@ void skybox::Draw_train(int image,int door,int zdoor2 ,int xdoor1,int x,int y,in
 	glVertex3f(x-2, 0, z/3);
 	glEnd();
 	glPopMatrix();
-
+	
 
 	//****
 	//the roof new 
@@ -430,6 +413,7 @@ void skybox::Draw_train_two(int image,int door,int zdoor2 ,int xdoor1,int x,int 
 	glVertex3f(-x+500, y, z/2+50);
 	glTexCoord2d(1,0);
 	glVertex3f(-x+500, y, z/3);
+	glEnd();
 	glPopMatrix();
 
 
@@ -446,21 +430,6 @@ void skybox::Draw_train_two(int image,int door,int zdoor2 ,int xdoor1,int x,int 
 	glVertex3f(-x+498, 0, z/2+50);
 	glTexCoord2d(1,0);
 	glVertex3f(-x+498, 0, z/3);
-	glEnd();
-	glPopMatrix();
-
-	glPushMatrix();
-	glBindTexture(GL_TEXTURE_2D,door);
-	glTranslated(0,0,zdoor2);
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-	glVertex3f(-14944444448.0f, 400.0f, 200.0f);
-	glTexCoord2d(0,1);
-	glVertex3f(-148888888898.0f, 400.0f, 400.0f);
-	glTexCoord2d(1,1);
-	glVertex3f(-14988888888.0f, 0, 400.0f);
-	glTexCoord2d(1,0);
-	glVertex3f(-148888888898.0f, 0, 200.0f);
 	glEnd();
 	glPopMatrix();
 
@@ -513,13 +482,13 @@ void skybox::Draw_train_two(int image,int door,int zdoor2 ,int xdoor1,int x,int 
 	glTranslated(0,0,zdoor2);
 	glBegin(GL_QUADS);
 	glTexCoord2d(0,0);
-	glVertex3f(14944444448.0f, 400.0f, 200.0f);
+	glVertex3f(144448.0f, 400.0f, 200.0f);
 	glTexCoord2d(0,1);
-	glVertex3f(148888888898.0f, 400.0f, 400.0f);
+	glVertex3f(148898.0f, 400.0f, 400.0f);
 	glTexCoord2d(1,1);
-	glVertex3f(14988888888.0f, 0, 400.0f);
+	glVertex3f(145488.0f, 0, 400.0f);
 	glTexCoord2d(1,0);
-	glVertex3f(148888888898.0f, 0, 200.0f);
+	glVertex3f(148898.0f, 0, 200.0f);
 	glEnd();
 	glPopMatrix();
 	
@@ -1744,6 +1713,7 @@ void skybox::Draw_third_trian(int x,int y,int z,int image,int wood ,int chairs,i
 	glVertex3f(-x+500, y, z/2+50);
 	glTexCoord2d(1,0);
 	glVertex3f(-x+500, y, z/3);
+	glEnd();
 	glPopMatrix();
 
 
@@ -1762,22 +1732,6 @@ void skybox::Draw_third_trian(int x,int y,int z,int image,int wood ,int chairs,i
 	glVertex3f(-x+498, 0, z/3);
 	glEnd();
 	glPopMatrix();
-
-	glPushMatrix();
-	glBindTexture(GL_TEXTURE_2D,door);
-	glTranslated(0,0,zdoor2);
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-	glVertex3f(-14944444448.0f, 400.0f, 200.0f);
-	glTexCoord2d(0,1);
-	glVertex3f(-148888888898.0f, 400.0f, 400.0f);
-	glTexCoord2d(1,1);
-	glVertex3f(-14988888888.0f, 0, 400.0f);
-	glTexCoord2d(1,0);
-	glVertex3f(-148888888898.0f, 0, 200.0f);
-	glEnd();
-	glPopMatrix();
-
 	//****
 
 
@@ -1812,6 +1766,7 @@ void skybox::Draw_third_trian(int x,int y,int z,int image,int wood ,int chairs,i
 	glVertex3f(x, y, z/2+50);
 	glTexCoord2d(1,0);
 	glVertex3f(x, y, z/3);
+	glEnd();
 	glPopMatrix();
 
 	
@@ -1821,22 +1776,7 @@ void skybox::Draw_third_trian(int x,int y,int z,int image,int wood ,int chairs,i
 	
 	//****
 
-	//the front door new version
-	glPushMatrix();
-	glBindTexture(GL_TEXTURE_2D,door);
-	glTranslated(0,0,zdoor2);
-	glBegin(GL_QUADS);
-	glTexCoord2d(0,0);
-	glVertex3f(14944444448.0f, 400.0f, 200.0f);
-	glTexCoord2d(0,1);
-	glVertex3f(148888888898.0f, 400.0f, 400.0f);
-	glTexCoord2d(1,1);
-	glVertex3f(14988888888.0f, 0, 400.0f);
-	glTexCoord2d(1,0);
-	glVertex3f(148888888898.0f, 0, 200.0f);
-	glEnd();
-	glPopMatrix();
-	
+	//the front door new version	
 
 
 	///*****
@@ -2964,6 +2904,7 @@ void skybox::drawBedNasser(int wood1,int chairs){
 	glPopMatrix();
 }
 
+
 void drawBox(float x,float y,float z,int image1,int image2,int image3,int image4,int image5,int image6){
 	
 		//front
@@ -3060,3 +3001,1852 @@ void drawBox(float x,float y,float z,int image1,int image2,int image3,int image4
 
 	glEnd();};
 
+void bed_room::table(int wood)
+{
+
+		glBindTexture(GL_TEXTURE_2D,wood);
+
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(700,0,0);
+	glTexCoord2d(1,1);
+	glVertex3f(700,25,0);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(700,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(700,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(700,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(700,25,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,0);
+	glEnd();
+
+	glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(700,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(700,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(700,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(700,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glVertex3f(700,25,0);
+	glVertex3f(700,25,100);
+	glVertex3f(400,25,100);
+	glVertex3f(400,25,0);
+	glEnd();
+
+	//legs
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,0);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-100,0);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,10);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-100,10);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,10);
+
+	glTexCoord2d(0,0);
+	glVertex3f(410,-100,0);
+	glTexCoord2d(1,0);
+	glVertex3f(410,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(410,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,-100,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glEnd();
+
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(690,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,0);
+	glTexCoord2d(1,1);
+	glVertex3f(700,-100,0);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(690,0,10);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(700,-100,10);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,10);
+
+	glTexCoord2d(0,0);
+	glVertex3f(700,-100,0);
+	glTexCoord2d(1,0);
+	glVertex3f(700,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(700,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(690,-100,0);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(690,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(690,0,0);
+
+	glEnd();
+
+	
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(690,0,90);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,90);
+	glTexCoord2d(1,1);
+	glVertex3f(700,-100,90);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(690,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(700,-100,100);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(700,-100,90);
+	glTexCoord2d(1,0);
+	glVertex3f(700,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(700,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(690,-100,90);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(690,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(690,0,90);
+
+	glEnd();
+	
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,90);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,90);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-100,90);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-100,100);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(410,-100,90);
+	glTexCoord2d(1,0);
+	glVertex3f(410,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(410,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,90);
+
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,-100,90);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,90);
+
+	glEnd();
+
+
+}
+void bed_room::draw_cupboard(int wood,int x1,int x2,int y1,int y2,int z1,int z2){
+	glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(x1,y1,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y1,z1);
+	glTexCoord2d(1,1);
+	glVertex3f(x2,y2,z1);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y2,z1);
+
+	glTexCoord2d(0,0);
+	glVertex3f(x2,y1,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y1,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x2,y2,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x2,y2,z1);
+
+	glTexCoord2d(0,0);
+	glVertex3f(x1,y1,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x1,y1,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x1,y2,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y2,z1);
+
+	glTexCoord2d(0,0);
+	glVertex3f(x1,y1,z2);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y1,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x2,y2,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y2,z2);
+
+	glTexCoord2d(0,0);
+	glVertex3f(x2,y1,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y1,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x1,y1,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y1,z1);
+
+	glTexCoord2d(0,1);
+	glVertex3f(x2,y2,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y2,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x1,y2,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y2,z1);
+
+	glEnd();
+
+}
+void bed_room::draw_bed(int bed_cover,int wood,int x1,int x2,int y1,int y2,int z1,int z2,int bed_front,int bed_back){
+	 glBindTexture(GL_TEXTURE_2D,wood);
+   glBegin(GL_QUADS); //bad
+   glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+   glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z1);
+   glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z1);
+   glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z1);
+
+   glTexCoord2d(0,0);
+   glVertex3d(x2,y1,z1);
+   glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z2);
+   glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z2);
+   glTexCoord2d(0,1);
+   glVertex3d(x2,y2,z1);
+
+   glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+   glTexCoord2d(1,0);
+   glVertex3d(x1,y1,z2);
+   glTexCoord2d(1,1);
+   glVertex3d(x1,y2,z2);
+   glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z1);
+
+
+   glTexCoord2d(0,0);
+    glVertex3d(x1,y1,z2);
+	glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z2);
+   glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z2);
+   glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z2);
+
+   glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+   glTexCoord2d(1,0);
+    glVertex3d(x2,y1,z1);
+	glTexCoord2d(1,1);
+	glVertex3d(x2,y1,z2);
+	glTexCoord2d(0,1);
+    glVertex3d(x1,y1,z2);
+	  
+	glTexCoord2d(0,0);
+    glVertex3d(x1,y2,z1);
+	glTexCoord2d(1,0);
+    glVertex3d(x2,y2,z1);
+	glTexCoord2d(1,1);
+	glVertex3d(x2,y2,z2);
+	glTexCoord2d(0,1);
+    glVertex3d(x1,y2,z2);
+	glEnd();
+	glBindTexture(GL_TEXTURE_2D,bed_cover);
+	glBegin(GL_QUADS);
+    glTexCoord2d(0,0);
+    glVertex3d(x1,y2+2,z1);
+	glTexCoord2d(1,0);
+    glVertex3d(x2,y2+2,z1);
+	glTexCoord2d(1,1);
+	glVertex3d(x2,y2+2,z2);
+	glTexCoord2d(0,1);
+    glVertex3d(x1,y2+2,z2);
+    
+    glEnd();
+
+    glBindTexture(GL_TEXTURE_2D,wood);
+	glTranslated(0,-20,0);
+	glBegin(GL_QUADS);//bed_front
+
+	glTexCoord2d(0,0);
+	glVertex3d(x1,y1,z1);
+	glTexCoord2d(1,0);
+    glVertex3d(x1,y1,z2);
+	glTexCoord2d(1,1);
+    glVertex3d(x1,bed_front,z2);
+	glTexCoord2d(0,1);
+	glVertex3d(x1,bed_front,z1);
+
+	glTexCoord2d(0,0);//bed_back
+	glVertex3d(x2,y1,z1);
+	glTexCoord2d(1,0);
+    glVertex3d(x2,y1,z2);
+	glTexCoord2d(0,1);
+    glVertex3d(x2,bed_back,z2);
+	glTexCoord2d(1,1);
+	glVertex3d(x2,bed_back,z1);
+	glEnd();
+
+
+}
+void bed_room::draw_wardrope(int door,int wood,int x1,int x2,int y1,int y2,int z1,int z2){
+	glBindTexture(GL_TEXTURE_2D,door);
+	 glBegin(GL_QUADS);
+	 glTexCoord2d(0,0);
+    glVertex3d(x1,y1,z2);
+   glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z2);
+   glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z2);
+   glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z2);
+	 glEnd();
+
+	 glBindTexture(GL_TEXTURE_2D,wood);
+	 glBegin(GL_QUADS);
+	 glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+    glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z1);
+    glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z1);
+    glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z1);
+
+    glTexCoord2d(0,0);
+   glVertex3d(x2,y1,z1);
+       glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z2);
+       glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z2);
+       glTexCoord2d(0,1);
+   glVertex3d(x2,y2,z1);
+
+    glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+       glTexCoord2d(1,0);
+   glVertex3d(x1,y1,z2);
+       glTexCoord2d(1,1);
+   glVertex3d(x1,y2,z2);
+       glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z1);
+
+       glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+       glTexCoord2d(1,0);
+    glVertex3d(x2,y1,z1);
+    glTexCoord2d(1,1);
+	glVertex3d(x2,y1,z2);
+	    glTexCoord2d(0,1);
+    glVertex3d(x1,y1,z2);
+	  
+	    glTexCoord2d(0,0);
+    glVertex3d(x1,y2,z1);
+	    glTexCoord2d(1,0);
+    glVertex3d(x2,y2,z1);
+	    glTexCoord2d(1,1);
+	glVertex3d(x2,y2,z2);
+	    glTexCoord2d(0,1);
+    glVertex3d(x1,y2,z2);
+	  
+  
+   glEnd();
+}
+ void bed_room::drawbox(int cupboard,int wood,int x1,int x2,int y1,int y2,int z1,int z2){
+
+   glBindTexture(GL_TEXTURE_2D,cupboard);
+   /*
+     glBegin(GL_QUADS);
+	 glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+       glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z1);
+       glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z1);
+       glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z1);
+    glEnd();
+	*/
+	glBindTexture(GL_TEXTURE_2D,wood);
+	  glBegin(GL_QUADS);
+     glTexCoord2d(0,0);
+   glVertex3d(x2,y1,z1);
+   glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z2);
+   glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z2);
+   glTexCoord2d(0,1);
+   glVertex3d(x2,y2,z1);
+  
+
+       glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+       glTexCoord2d(1,0);
+   glVertex3d(x1,y1,z2);
+       glTexCoord2d(1,1);
+   glVertex3d(x1,y2,z2);
+       glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z1);
+
+       glTexCoord2d(0,0);
+    glVertex3d(x1,y1,z2);
+	    glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z2);
+       glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z2);
+       glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z2);
+
+       glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+       glTexCoord2d(1,0);
+    glVertex3d(x2,y1,z1);
+	    glTexCoord2d(1,1);
+	glVertex3d(x2,y1,z2);
+	    glTexCoord2d(0,1);
+    glVertex3d(x1,y1,z2);
+	  
+	    glTexCoord2d(0,0);
+    glVertex3d(x1,y2,z1);
+	    glTexCoord2d(1,0);
+    glVertex3d(x2,y2,z1);
+	    glTexCoord2d(1,1);
+	glVertex3d(x2,y2,z2);
+	    glTexCoord2d(0,1);
+    glVertex3d(x1,y2,z2);
+	  
+  
+   glEnd();
+
+}          
+ void bed_room::draw_library(int book,int wood,int x1,int x2,int y1,int y2,int z1,int z2){
+
+   glBindTexture(GL_TEXTURE_2D,book);
+   
+     glBegin(GL_QUADS);
+	 glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+       glTexCoord2d(1,z1);
+   glVertex3d(x2,y1,0);
+       glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z1);
+       glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z1);
+    glEnd();
+	
+	glBindTexture(GL_TEXTURE_2D,wood);
+	  glBegin(GL_QUADS);
+     glTexCoord2d(0,0);
+   glVertex3d(x2,y1,z1);
+   glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z2);
+   glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z2);
+   glTexCoord2d(0,1);
+   glVertex3d(x2,y2,z1);
+  
+
+       glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+       glTexCoord2d(1,0);
+   glVertex3d(x1,y1,z2);
+       glTexCoord2d(1,1);
+   glVertex3d(x1,y2,z2);
+       glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z1);
+
+       glTexCoord2d(0,0);
+    glVertex3d(x1,y1,z2);
+	    glTexCoord2d(1,0);
+   glVertex3d(x2,y1,z2);
+       glTexCoord2d(1,1);
+   glVertex3d(x2,y2,z2);
+       glTexCoord2d(0,1);
+   glVertex3d(x1,y2,z2);
+
+       glTexCoord2d(0,0);
+   glVertex3d(x1,y1,z1);
+       glTexCoord2d(1,0);
+    glVertex3d(x2,y1,z1);
+	    glTexCoord2d(1,1);
+	glVertex3d(x2,y1,z2);
+	    glTexCoord2d(0,1);
+    glVertex3d(x1,y1,z2);
+	  
+	    glTexCoord2d(0,0);
+    glVertex3d(x1,y2,z1);
+	    glTexCoord2d(1,0);
+    glVertex3d(x2,y2,z1);
+	    glTexCoord2d(1,1);
+	glVertex3d(x2,y2,z2);
+	    glTexCoord2d(0,1);
+    glVertex3d(x1,y2,z2);
+	  
+  
+   glEnd();
+
+}
+  void bed_room::drawradio(int radio,int wood,int x1,int x2,int y1,int y2,int z1,int z2){
+	glBindTexture(GL_TEXTURE_2D,radio);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(x1,y1,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y1,z1);
+	glTexCoord2d(1,1);
+	glVertex3f(x2,y2,z1);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y2,z1);
+
+	glTexCoord2d(0,0);
+	glVertex3f(x2,y1,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y1,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x2,y2,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x2,y2,z1);
+
+	glTexCoord2d(0,0);
+	glVertex3f(x1,y1,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x1,y1,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x1,y2,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y2,z1);
+	glEnd();
+
+	glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(x1,y1,z2);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y1,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x2,y2,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y2,z2);
+
+	glTexCoord2d(0,0);
+	glVertex3f(x2,y1,z1);
+	glTexCoord2d(1,0);
+	glVertex3f(x2,y1,z2);
+	glTexCoord2d(1,1);
+	glVertex3f(x1,y1,z2);
+	glTexCoord2d(0,1);
+	glVertex3f(x1,y1,z1);
+
+	glVertex3f(x2,y2,z1);
+	glVertex3f(x2,y2,z2);
+	glVertex3f(x1,y2,z2);
+	glVertex3f(x1,y2,z1);
+
+	glEnd();
+
+} 
+  void bed_room:: carpett(int carpet,int x1,int x2,int z1,int z2){
+	glBindTexture(GL_TEXTURE_2D,carpet);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+   glVertex3d(x1,0.1,z1);
+   glTexCoord2d(1,0);
+    glVertex3d(x2,0.1,z1);
+	glTexCoord2d(1,1);
+	glVertex3d(x2,0.1,z2);
+	glTexCoord2d(0,1);
+    glVertex3d(x1,0.1,z2);
+	 
+	glEnd();}
+ void bed_room::draw_paintig(int paint,int x1,int y1,int y2,int z1,int z2){
+	 glBindTexture(GL_TEXTURE_2D,paint);
+	glBegin(GL_QUADS);
+
+	glTexCoord2d(0,0);
+	glVertex3d(x1,y1,z1);
+	glTexCoord2d(1,0);
+    glVertex3d(x1,y1,z2);
+	glTexCoord2d(1,1);
+    glVertex3d(x1,y2,z2);
+	glTexCoord2d(0,1);
+	glVertex3d(x1,y2,z1);
+	glEnd();
+   
+
+
+}
+void bed_room::draw_table(int wood){
+
+		glBindTexture(GL_TEXTURE_2D,wood);
+
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(700,0,0);
+	glTexCoord2d(1,1);
+	glVertex3f(700,25,0);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(700,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(700,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(700,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(700,25,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,0);
+	glEnd();
+
+	glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(700,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(700,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(700,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(700,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glVertex3f(700,25,0);
+	glVertex3f(700,25,100);
+	glVertex3f(400,25,100);
+	glVertex3f(400,25,0);
+	glEnd();
+
+	//legs
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,0);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-100,0);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,10);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-100,10);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,10);
+
+	glTexCoord2d(0,0);
+	glVertex3f(410,-100,0);
+	glTexCoord2d(1,0);
+	glVertex3f(410,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(410,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,-100,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glEnd();
+
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(690,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,0);
+	glTexCoord2d(1,1);
+	glVertex3f(700,-100,0);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(690,0,10);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(700,-100,10);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,10);
+
+	glTexCoord2d(0,0);
+	glVertex3f(700,-100,0);
+	glTexCoord2d(1,0);
+	glVertex3f(700,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(700,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(690,-100,0);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,10);
+	glTexCoord2d(1,1);
+	glVertex3f(690,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(690,0,0);
+
+	glEnd();
+
+	
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(690,0,90);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,90);
+	glTexCoord2d(1,1);
+	glVertex3f(700,-100,90);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(690,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(700,-100,100);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(700,-100,90);
+	glTexCoord2d(1,0);
+	glVertex3f(700,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(700,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(700,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(690,-100,90);
+	glTexCoord2d(1,0);
+	glVertex3f(690,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(690,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(690,0,90);
+
+	glEnd();
+	
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,90);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,90);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-100,90);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-100,100);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(410,-100,90);
+	glTexCoord2d(1,0);
+	glVertex3f(410,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(410,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,90);
+
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,-100,90);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-100,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,90);
+
+	glEnd();
+
+
+}
+void bed_room::draw_chair(int wood){
+	glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,1);
+	glVertex3f(500,25,0);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(500,25,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,0);
+	glEnd();
+
+	glBindTexture(GL_TEXTURE_2D,wood);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,25,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,25,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glVertex3f(500,25,0);
+	glVertex3f(500,25,100);
+	glVertex3f(400,25,100);
+	glVertex3f(400,25,0);
+	glEnd();
+
+	//legs
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,0);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-50,0);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,10);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-50,10);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,10);
+
+	glTexCoord2d(0,0);
+	glVertex3f(410,-50,0);
+	glTexCoord2d(1,0);
+	glVertex3f(410,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(410,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,-50,0);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,0);
+
+	glEnd();
+
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(490,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,0);
+	glTexCoord2d(1,1);
+	glVertex3f(500,-50,0);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(490,0,10);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(500,-50,10);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,10);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,-50,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(500,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,0);
+
+	glTexCoord2d(0,0);
+	glVertex3f(490,-50,0);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,10);
+	glTexCoord2d(1,1);
+	glVertex3f(490,0,10);
+	glTexCoord2d(0,1);
+	glVertex3f(490,0,0);
+
+	glEnd();
+
+	
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(490,0,90);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,90);
+	glTexCoord2d(1,1);
+	glVertex3f(500,-50,90);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(490,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,-50,100);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(500,-50,90);
+	glTexCoord2d(1,0);
+	glVertex3f(500,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(500,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(500,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(490,-50,90);
+	glTexCoord2d(1,0);
+	glVertex3f(490,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(490,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(490,0,90);
+
+	glEnd();
+	
+		glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,90);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,90);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-50,90);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,90);
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,0,100);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(410,-50,100);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,100);
+
+	glTexCoord2d(0,0);
+	glVertex3f(410,-50,90);
+	glTexCoord2d(1,0);
+	glVertex3f(410,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(410,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(410,0,90);
+
+
+	glTexCoord2d(0,0);
+	glVertex3f(400,-50,90);
+	glTexCoord2d(1,0);
+	glVertex3f(400,-50,100);
+	glTexCoord2d(1,1);
+	glVertex3f(400,0,100);
+	glTexCoord2d(0,1);
+	glVertex3f(400,0,90);
+
+	glEnd();
+
+	//back
+	glBegin(GL_QUADS);
+    glTexCoord2d(0,0);
+	glVertex3f(400,0,0);
+	glTexCoord2d(1,0);
+	glVertex3f(500,0,0);
+	glTexCoord2d(1,1);
+	glVertex3f(500,120,0);
+	glTexCoord2d(0,1);
+	glVertex3f(400,120,0);
+	glEnd();}
+
+void bed_room::draw_bedroom(int wood,int bed_cover,int door,int cupboard,int radio,int book,int carpet,int paint){
+	glPushMatrix();
+	glTranslated(-1380,20,420);
+	bed_room::draw_bed(bed_cover,wood,400,850,0,50,0,250,150,90);
+	glTranslated(0,20,-380);
+	bed_room::draw_bed(bed_cover,wood,400,850,0,50,0,250,150,90);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-1380,0,300);
+	bed_room::draw_cupboard( wood,400,450,0,100,0,100);
+	glPopMatrix();
+    
+	glPushMatrix();
+	glTranslated(10,0,0);
+	bed_room::draw_wardrope( door, wood,400,800,0,500,0,100);
+    glTranslated(0,0,590);
+	bed_room::drawbox( cupboard, wood,400,700,0,100,0,100);
+
+	glRotated(90,0,1,0);
+	glTranslated(-500,0,450);
+	 
+	bed_room::drawradio(radio, wood, 400, 450, 0,50, 0, 100);
+	glPopMatrix();
+
+	glPushMatrix();
+    glTranslated(0,300,590);
+	bed_room::draw_library(book,wood,490,700,0,100,0,100);
+	glPopMatrix();
+
+	glPushMatrix();
+    glTranslated(-1380,300,200);
+	bed_room::draw_paintig( paint,450,0,150,0,300);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-250,0,200);
+	bed_room:: carpett(carpet,300,950,0,350);
+	glPopMatrix();
+
+	glPushMatrix();
+	//CHAIR
+    glTranslated(-400,55,500);
+	bed_room::draw_chair(wood);
+	glPopMatrix();
+	 glTranslated(-500,105,590);
+	bed_room::draw_table(wood);
+
+	}
+
+
+void skybox::table_for_playstation_room(int x,int y ,int z,int tbale_texture,int iron,int cris)
+{
+
+
+	//ÿ«Ê·… «· ›·“ÌÊ‰
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 100.0f, 20.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y, 20.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, y, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y, z);
+	glEnd();
+
+
+
+	//front left tawlah
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+500, 0, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y-35, z);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+250, y-35, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+250, 0, z);
+	glEnd();
+
+
+
+	//front left tawlah
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+500, 0, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y-35, z);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+250, y-35, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+250, 0, z);
+	glEnd();
+
+
+	//front left tawlah
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+500, y-35, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y-35, 20);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+250, y-35, 20);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+250, y-35, z);
+	glEnd();
+
+
+
+	//front right tawlah
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+250, 0, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+250, y-35, z);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, y-35, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, 0, z);
+	glEnd();
+
+
+	//front right tawlah
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+250, y-35, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+250, y-35, 20);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, y-35, 20);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y-35, z);
+	glEnd();
+
+
+
+
+	/**************          back ***/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y, 20.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y, 20.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, 0, 20.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, 0, 20.0f);
+	glEnd();
+
+
+
+
+	/**************          right ***/
+	
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+500, y, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y, 20);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, 0, 20);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+500, 0, z);
+	glEnd();
+
+
+
+	/**************          left ***/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, y, 20.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, 0, 20.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, 0, z);
+	glEnd();
+
+
+
+
+		/**************          ground ***/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 0, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 0.0f, 20.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, 0, 20.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+500, 0, z);
+	glEnd();
+
+
+	//the end of the table
+
+
+	///ﬁ«⁄œ… «· ·›Ì“ÌÊ‰
+
+	//front display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+200, y, z-50);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+200, y+20, z-50);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+300, y+20, z-50);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+300, y, z-50);
+	glEnd();
+
+	//back display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+200, y+20, z-75);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+200, y+20, z-75);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+300, y+20, z-75);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+300, y, z-75);
+	glEnd();
+
+
+	//left display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+200, y+20, z-50);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+200, y+20, z-75);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+200, y, z-75);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+200, y, z-50);
+	glEnd();
+
+
+
+	
+	//right display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+300, y, z-50);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+300, y, z-75);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+300, y+20, z-75);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+300, y+20, z-50);
+	glEnd();
+
+
+
+
+
+	//right display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+200, y+20, z-50);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+200, y+20, 100.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+300, y+20, 100.0f);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+300, y+20, z-50);
+	glEnd();
+
+
+
+	
+	//button  display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+200, y+2, z-50);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+200, y+2, z-75);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+300, y+2, z-75);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+300, y+2, z-50);
+	glEnd();
+
+
+
+	//Ì·Ì —«»ÿ… «·ﬁ«⁄œ… »«·‘«‘…
+	//front display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+245, y+20, z-55);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+245, 140.0f, z-55);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+255, 140.0f, z-55);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+255, y+20, z-55);
+	glEnd();
+
+	//back display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+245, y+20, z-70);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+245, 140.0f, z-70);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+255, 140.0f, z-70);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+255, y+20, z-70);
+	glEnd();
+
+
+	//left display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+245, 140.0f, z-55);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+245, 140.0f, z-70);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+245, y+20, z-70);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+245, y+20, z-55);
+	glEnd();
+
+
+
+	
+	//right display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+255, y+20, z-55);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+255, y+20, z-70);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+255, 140.0f, z-70);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+255, 140.0f, z-55);
+	glEnd();
+
+
+
+
+
+	//right display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+245, 140.0f, z-55);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+245, 140.0f, z-70);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+255, 140.0f, z-70);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+255, 140.0f, z-55);
+	glEnd();
+
+
+	//button  display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+245, y+20, z-55);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+245, y+20, z-70);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+255, y+20, z-70);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+255, y+20, z-55);
+	glEnd();
+
+
+
+	//«·‘«‘…
+	/*****************************************************************************/
+	//front  display
+	glBindTexture(GL_TEXTURE_2D,cris);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+400, y+40, z-52);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+400, y+170, z-52);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+100, y+170, z-52);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+100, y+40, z-52);
+	glEnd();
+
+
+
+	//grround  display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+100, y+40, z-52);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+100, y+40, z-67);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+400, y+40, z-67);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+400, y+40, z-52);
+	glEnd();
+
+
+
+	//back  display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+400, y+40, z-67);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+400, y+170, z-67);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+100, y+170, z-67);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+100, y+40, z-67);
+	glEnd();
+
+
+	//left display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+100, y+40, z-52);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+100, y+40, z-67);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+100, y+170, z-67);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+100, y+170, z-52);
+
+
+
+	//right  display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+400, y+40, z-52);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+400, y+40, z-67);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+400, y+170, z-67);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+400, y+170, z-52);
+
+	//top display
+	glBindTexture(GL_TEXTURE_2D,iron);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+100, y+170, z-52);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+100, y+170, z-67);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+400, y+170, z-67);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+400, y+170, z-52);	
+	glEnd();
+	
+
+
+	//«·—›
+	//ground
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y+340, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(-400, y+340, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-400,y+340, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y+340, z);
+	glEnd();
+
+	//top
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x,y+350, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(-400, y+350, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-400, y+350, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y+350, z);
+	glEnd();
+
+	//left
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y+340, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, y+350, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, y+350, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y+340, z);
+	glEnd();
+
+	//right
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+500, y+340, 0.0f);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y+350, 0.0f);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, y+350, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+500, y+340, z);
+	glEnd();
+
+
+	/*font*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y+340, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y+340, z);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, y+350, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y+350, z);
+	glEnd();
+
+
+	
+	/*back*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y+340, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y+340, 0);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, y+350, 0);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y+350, 0);
+	glEnd();
+
+
+
+	/* 2raf right/******************************************************************/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+500, y+340, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y+300, 0);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, y+300, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+500, y+340, z);
+	glEnd();
+		
+	/* 2raf left*/		
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+490, y+340, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+490, y+300, 0);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+490, y+300, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+490, y+340, z);
+	glEnd();
+
+
+	/* 2raf groun*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+490, y+300, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+490, y+300, z);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, y+300, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+500, y+300, 0);
+	glEnd();
+
+
+	/* 2raf back*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+490, y+340, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y+340, 0);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, y+300, 0);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+490, y+300, 0);
+	glEnd();
+
+
+	/* 2raf front*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+490, y+340, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+500, y+340, z);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, y+300, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+490, y+300, z);
+	glEnd();
+
+
+	/********************  raff left                                *********** ************/
+		
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+10, y+340, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+10, y+300, 0);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+10, y+300, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+10, y+340, z);
+	glEnd();
+		
+		/* 2raf left*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y+340, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, y+300, 0);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, y+300, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y+340, z);
+	glEnd();
+
+
+			/* 2raf groun*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y+300, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, y+300, z);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+10, y+300, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+10, y+300, 0);
+	glEnd();
+
+
+
+
+
+	/* 2raf back*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y+340, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+10, y+340, 0);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+10,y+300, 0);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y+300, 0);
+	glEnd();
+
+
+			/* 2raf front*/
+	glBindTexture(GL_TEXTURE_2D,tbale_texture);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, y+340, z);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+10, y+340, z);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+10, y+300, z);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, y+300, z);
+	glEnd();
+
+	/**********************************************************     end raff**********************************************/
+
+
+
+	/****************photo*/
+	glBindTexture(GL_TEXTURE_2D,cris);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+300, y+350, z-125);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+400, y+350, z-125);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+400, y+450, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+300, y+450, 0);
+	glEnd();
+
+
+
+	/****************photo*/
+	glBindTexture(GL_TEXTURE_2D,cris);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x+200, y+350, z-125);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+100, y+350, z-125);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+100, y+450, 0);
+	glTexCoord2d(0,1);
+	glVertex3f(-x+200, y+450, 0);
+	glEnd();
+	/****************************************/
+
+}         

@@ -24,7 +24,7 @@ public:
 	static void drawTableNasser(int wood1);
 	static void drawCoachNasser (int wood1,int chairs);
 	static void drawBedNasser(int wood1,int chairs);
-
+	static void table_for_playstation_room(int x,int y ,int z,int tbale_texture,int iron,int cris);
 	
 
 	static void DrawChairs();
@@ -39,3 +39,19 @@ public:
 	
 };
 
+class bed_room{
+
+	public:
+    static void table(int wood);
+	static void  draw_cupboard(int wood,int x1,int x2,int y1,int y2,int z1,int z2);
+	static void draw_bed(int bed_cover,int wood,int x1,int x2,int y1,int y2,int z1,int z2,int bed_front,int bed_back);
+	static void draw_wardrope(int door,int wood,int x1,int x2,int y1,int y2,int z1,int z2);
+    static void  drawbox(int cupboard,int wood,int x1,int x2,int y1,int y2,int z1,int z2);
+	static void drawradio(int radio,int wood,int x1,int x2,int y1,int y2,int z1,int z2);
+	static void draw_library(int book,int wood,int x1,int x2,int y1,int y2,int z1,int z2);
+	static void carpett(int carpet,int x1,int x2,int z1,int z2);
+	static void draw_paintig(int paint,int x1,int y1,int y2,int z1,int z2);
+	static void draw_chair(int wood);
+	static void draw_table(int wood);
+	static void draw_bedroom(int wood,int bed_cover,int door,int cupboard,int radio,int book,int carpet,int paint);
+};

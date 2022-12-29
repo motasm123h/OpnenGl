@@ -6,6 +6,9 @@
 
 #include "texture.h"
 #include "skybox.h"
+//#include "GLTexture.h"
+//#include "model.h"
+//#include "Model_3DS.h"
 
 HDC			hDC = NULL;		// Private GDI Device Context
 HGLRC		hRC = NULL;		// Permanent Rendering Cntext
@@ -49,6 +52,11 @@ int wood=0 , iron=0,ironwall=0,glass=0,controll=0,chairs = 0,topChairs=0,door=0,
 int wintop,winbottm,winleft,winright,winfront,winback;
 int springtop,springbottm,sringleft,springright,springfront,springback;
 int auttop,autbottm,autleft,autright,autfront,autback;
+int	sumtop,sumbottm,sumleft,sumright,sumfront,sumback; 
+int cris,taw,im,h,fo,cre,sga;
+int bed_room_wood,bed_cover, dr,cupboard, radio,book, carpet, paint;
+//Model_3DS*tree;
+//GLTexture BARK,Leaf,lo;
 
 
 LRESULT	CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -79,9 +87,9 @@ void Camera()
 {
 	gluLookAt(movX, movY, movZ, lX, lY, -5, 0, 1, 0);
 	if (keys['D'])
-		movX += 100;
+		movX += 300;
 	if (keys['A'])
-		movX -= 100;
+		movX -= 300;
 	if (keys['W'])
 		movY += 10;
 	if (keys['S'])
@@ -91,9 +99,9 @@ void Camera()
 	if (keys['X'])
 		movZ -= 15;
 	if (keys[VK_LEFT])
-		lX += 80;
+		lX += 200;
 	if (keys[VK_RIGHT])
-		lX -= 7;
+		lX -= 50;
 	if (keys[VK_UP])
 		lY += 1;
 	if (keys[VK_DOWN])
@@ -176,7 +184,44 @@ int InitGL(GLvoid)										// All Setup For OpenGL Goes Here
 	autright=LoadTexture("autright.bmp",255);
 	autfront=LoadTexture("autfront.bmp",255);
 	autback=LoadTexture("autback.bmp",255);
+	
+	//summer
+	sumtop=LoadTexture("autumnposy.bmp",255);
+	sumbottm=LoadTexture("autumnnegy.bmp",255);
+	sumleft=LoadTexture("autumnposz.bmp",255);
+	sumright=LoadTexture("autumnnegz.bmp",255);
+	sumfront=LoadTexture("autumnposx.bmp",255);
+	sumback=LoadTexture("autumnnegx.bmp",255);
 
+	//ps_room
+	cris= LoadTexture("crestiano.bmp",255);
+	taw= LoadTexture("taw.bmp",255);
+	im= LoadTexture("im.bmp",255);
+	h= LoadTexture("messi-ronaldo-fb.bmp",255);
+	fo= LoadTexture("fol.bmp",255);
+	cre= LoadTexture("cree.bmp",255);
+	sga= LoadTexture("sga.bmp",255);
+
+
+	//room
+	/*
+	bed_cover= LoadTexture("bed.bmp",255);
+	cupboard= LoadTexture("cupboard.bmp",255);
+	dr=LoadTexture("d.bmp",255);
+	book=LoadTexture("book.bmp",255);
+	radio=LoadTexture("radio.bmp",255);
+	paint=LoadTexture("paint.bmp",255);
+	carpet=LoadTexture("carpet.bmp",255);
+    bed_room_wood=LoadTexture("wood.bmp");
+
+	*/
+	/*tree model 
+	tree=new Model_3DS();
+	tree->Load("Tree1.3DS");
+	Leaf.LoadBMP("blatt.bmp");
+    BARK.LoadBMP("bark_loo.bmp");
+	lo.LoadBMP("blatt1.bmp");
+	*/
 	return TRUE;										// Initialization Went OK
 }
 //capte
@@ -257,7 +302,7 @@ void secondTrin()
 void firstTrain()
 {
 	glPushMatrix();
-	skybox::Draw_train(ironwall,door,zdoor2,xdoor1,1800,1000,700);
+	skybox::Draw_train_two(ironwall,door,zdoor2,xdoor1,1800,1000,700);
 	glPushMatrix();
 	glTranslated(300,20,660);
 	glScaled(70,70,80);
@@ -295,6 +340,270 @@ void firstTrain()
 	glPopMatrix();
 }
 
+void bedroom()
+{
+
+	glPushMatrix();
+	skybox::Draw_train(ironwall,door,zdoor2,xdoor1,1800,1000,700);
+
+	glPushMatrix();
+	glTranslated(-200,0,15);
+	bed_room::draw_bedroom(image,chairs,door,image,image,image,image,image);
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(1600,0,0);
+	skybox::table_for_playstation_room(900,100,175,image,iron,wood);
+	glPopMatrix();
+
+
+	glPopMatrix();
+
+}
+
+ 
+void chair()
+{
+
+
+	//top
+	glBindTexture(GL_TEXTURE_2D,im);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 95.0f, 505);//245---->390//390-->455//455-->505
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 95.0f, 650);// 390-------------->535//535-->600-->650
+	glTexCoord2d(1,1);
+	glVertex3f(-400, 95.0f, 650);//410-->>555
+	glTexCoord2d(1,0);
+	glVertex3f(-400.0f, 95.0f, 505);
+	glEnd();
+
+	//ground
+	glBindTexture(GL_TEXTURE_2D,im);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 1, 505);
+	glTexCoord2d(0,1);
+	glVertex3f(-X, 1, 650);
+	glTexCoord2d(1,1);
+	glVertex3f(-400, 1, 650);
+	glTexCoord2d(1,0);
+	glVertex3f(-400.0f, 1, 505);
+	glEnd();
+
+
+
+
+	//back
+	glBindTexture(GL_TEXTURE_2D,im);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 120, 650);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 0, 650);
+	glTexCoord2d(1,1);
+	glVertex3f(-390, 0, 650);
+	glTexCoord2d(1,0);
+	glVertex3f(-390.0f, 120, 650);
+	glEnd();
+
+
+
+	//front
+	glBindTexture(GL_TEXTURE_2D,im);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 95, 505);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 0, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-400, 0, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-400.0f, 95, 505);
+	glEnd();
+
+
+
+
+	//LEFT
+	glBindTexture(GL_TEXTURE_2D,im);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 95, 505);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 95, 650);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, 0, 650);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, 0, 505);
+	glEnd();
+
+	//front
+	glBindTexture(GL_TEXTURE_2D,im);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-400.0f, 120, 650);
+	glTexCoord2d(0,1);
+	glVertex3f(-400.0f, 120, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-400.0f, 0, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-400.0f, 0, 650);
+	glEnd();
+
+
+
+	//left snada 
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 120, 670);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 120, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, 0, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-x, 0, 670);
+	glEnd();
+
+
+	//left snada 
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x-10, 120, 670);
+	glTexCoord2d(0,1);
+	glVertex3f(-x-10, 120, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-x-10, 0, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-x-10, 0, 670);
+	glEnd();
+
+	//top snada 
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x-10, 120, 670);
+	glTexCoord2d(0,1);
+	glVertex3f(-9x-10, 120, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, 120, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-X, 120, 670);
+	glEnd();
+
+
+	//front snada 
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x-10, 120, 670);
+	glTexCoord2d(0,1);
+	glVertex3f(-2, 120, 670);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, 0, 670);
+	glTexCoord2d(1,0);
+	glVertex3f(-x-10, 0, 670);
+	glEnd();
+
+
+
+	
+	//back snada 
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x-10, 120, 505);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 120, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-x, 0, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-x-10, 0, 505);
+	glEnd();
+
+
+
+
+	//back for dahr  snada 
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x-10, 120, 670);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 0, 670);
+	glTexCoord2d(1,1);
+	glVertex3f(-390.0f, 0, 670);
+	glTexCoord2d(1,0);
+	glVertex3f(-390.0f, 120, 670);
+	glEnd();
+
+
+
+		//back
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-x, 120, 650);
+	glTexCoord2d(0,1);
+	glVertex3f(-x, 120, 670);///problem
+	glTexCoord2d(1,1);
+	glVertex3f(-390, 120, 670);
+	glTexCoord2d(1,0);
+	glVertex3f(-390.0f, 120, 650);
+	glEnd();
+
+
+
+			//back
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-390.0f, 120, 670);
+	glTexCoord2d(0,1);
+	glVertex3f(-390.0f, 120, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-390, 0, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-390.0f, 0, 670);
+	glEnd();
+
+
+		//back
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-390.0f, 120, 670);
+	glTexCoord2d(0,1);
+	glVertex3f(-390.0f, 120, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, 120, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+500, 120, 670);
+	glEnd();
+
+
+
+
+
+	
+		//back
+	glBindTexture(GL_TEXTURE_2D,taw);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0);
+	glVertex3f(-390.0f, 120, 505);
+	glTexCoord2d(0,1);
+	glVertex3f(-390.0f, 0, 505);
+	glTexCoord2d(1,1);
+	glVertex3f(-x+500, 0, 505);
+	glTexCoord2d(1,0);
+	glVertex3f(-x+500, 120, 505);
+	glEnd();
+
+
+}
 
 int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 {	
@@ -304,61 +613,86 @@ int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	Camera();
 	moveDoor();
 
-
+	//sky2
 	glPushMatrix();
 	skybox::skyboxfirst(12000,4000,8000,winback,winleft,winright,winfront,wintop,winbottm);
 	glPopMatrix();
 
+	//sky2
 	glPushMatrix();
 	glTranslated(24300,0,0);
-	skybox::skyboxsecond(12000,4000,8000,springfront,springback,springright,sringleft,springtop,springbottm);
+	skybox::skyboxsecond(12000,4000,8000,springfront,springback,springright,sringleft,springtop,springbottm); 
+	 //sedra model
+	 //draw_model::draw_tree(tree, BARK, lo, Leaf,5000,-4000,-3500,200);
 	glPopMatrix();
+	//sky3
 	glPushMatrix();
 	glTranslated(49000,0,0);
 	skybox::skyboxsecond(12000,4000,8000,autfront,autback,autright,autleft,auttop,grass);
 	glPopMatrix();
+	//sky 4
+	glPushMatrix();
+	glTranslated(74000,0,0);
+	skybox::skyboxsecond(12000,4000,8000,sumfront,sumback,sumright,sumleft,sumtop,sumbottm);
+	glPopMatrix();
+
+
 	glPushMatrix();
 	
 	glPushMatrix();
-
 	glRotated(90, 0, 1, 0);
 	glPushMatrix();
-	glTranslated(0, -3950, -0);
-	skybox::test1(300, 1.5, 11000, iron, ironwall);
+	glTranslated(-35, -3950, -0);
+	skybox::test1(600, 1.5, 11000, iron, ironwall);
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(0, -3950, 24000);
-	skybox::test1(300, 1.5, 13000, iron, ironwall);
+	glTranslated(-35, -3950, 24000);
+	skybox::test1(600, 1.5, 13000, iron, ironwall);
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(0, -3950, 50000);
-	skybox::test1(300, 1.5, 13000, iron, ironwall);
+	glTranslated(-35, -3950, 50000);
+	skybox::test1(600, 1.5, 13000, iron, ironwall);
 	glPopMatrix();
+
+	glPushMatrix();
+	glTranslated(-35, -3950, 70000);
+	skybox::test1(600, 1.5, 12000, iron, ironwall);
+	glPopMatrix();
+
 	glPopMatrix();
 	
 
-
+	/*
 	//the first 
 	glPushMatrix();
-	glTranslated(-8000,-3930,-310);
-	firstTrain();
+	glTranslated(-8300,-3930,-310);
+	bedroom();
 	glPopMatrix();
 
 	//the second
 	glPushMatrix();	
-	glTranslated(-4700,-3930,-310);
-	secondTrin();
+	glTranslated(-5000,-3930,-310);
+	firstTrain();
 	glPopMatrix();
 
 	///the third
 	glPushMatrix();
-	glTranslated(-1400,-3930,-310);
+	glTranslated(-1700,-3930,-310);
 	skybox::Draw_third_trian(1800,1000,700,image,ironwall,chairs,door,zdoor2,xdoor1);
 	glPopMatrix();
+	
+	//four test
+	glPushMatrix();
+	glTranslated(1600,-3930,-310);
+	secondTrin();
+	glPopMatrix();
 
-
+	*/
+	glPushMatrix();
+	chair();
+	glPopMatrix();
 	return TRUE;
 }
 

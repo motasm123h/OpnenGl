@@ -12,12 +12,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="GLTexture.cpp" />
+    <ClCompile Include="modelll.cpp" />
+    <ClCompile Include="Model_3DS.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="skybox.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="workspace.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="model.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="skybox.h" />
     <ClInclude Include="texture.h" />
