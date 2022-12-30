@@ -6,6 +6,7 @@ class skybox
 public:
 	static void skyboxfirst(int x ,int y , int z ,int front , int back ,int left , int right , int top ,int bottm);
 	static void skyboxsecond(int x ,int y , int z ,int front , int back ,int left , int right , int top ,int bottm);
+	static void skyboxthird(int x ,int y, int z ,int front ,int back ,int right ,int left ,int top ,int bottm);
 	static void Draw_train(int image,int x, int y,int z ,int zdoor2 ,int door,int xdoor1);
 	static void Draw_train_two(int image,int x, int y,int z ,int zdoor2 ,int door,int xdoor1);
 	static void Draw_third_trian(int x,int y,int z,int image,int wood ,int chairs,int door,int zdoor2 ,int xdoor1);

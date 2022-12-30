@@ -385,7 +385,7 @@ void chair()
 	glTexCoord2d(0,0);
 	glVertex3f(-x, 1, 505);
 	glTexCoord2d(0,1);
-	glVertex3f(-X, 1, 650);
+	glVertex3f(-x, 1, 650);
 	glTexCoord2d(1,1);
 	glVertex3f(-400, 1, 650);
 	glTexCoord2d(1,0);
@@ -487,11 +487,11 @@ void chair()
 	glTexCoord2d(0,0);
 	glVertex3f(-x-10, 120, 670);
 	glTexCoord2d(0,1);
-	glVertex3f(-9x-10, 120, 505);
+	glVertex3f(-x-10, 120, 505);
 	glTexCoord2d(1,1);
 	glVertex3f(-x, 120, 505);
 	glTexCoord2d(1,0);
-	glVertex3f(-X, 120, 670);
+	glVertex3f(-x, 120, 670);
 	glEnd();
 
 
@@ -585,15 +585,12 @@ void chair()
 	glEnd();
 
 
-
-
-
 	
 		//back
 	glBindTexture(GL_TEXTURE_2D,taw);
 	glBegin(GL_QUADS);
 	glTexCoord2d(0,0);
-	glVertex3f(-390.0f, 120, 505);
+	glVertex3f(-x+510, 120, 505);
 	glTexCoord2d(0,1);
 	glVertex3f(-390.0f, 0, 505);
 	glTexCoord2d(1,1);
@@ -633,7 +630,7 @@ int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	//sky 4
 	glPushMatrix();
 	glTranslated(74000,0,0);
-	skybox::skyboxsecond(12000,4000,8000,sumfront,sumback,sumright,sumleft,sumtop,sumbottm);
+	skybox::skyboxthird(12000,4000,8000,sumfront,sumback,sumright,sumleft,sumtop,sumbottm);
 	glPopMatrix();
 
 
@@ -647,17 +644,18 @@ int DrawGLScene(GLvoid)									// Here's Where We Do All The Drawing
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(-35, -3950, 24000);
+	glTranslated(24000, -3950, -20);
+	glRotated(90,0,1,0);
 	skybox::test1(600, 1.5, 13000, iron, ironwall);
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(-35, -3950, 50000);
+	glTranslated(45000, -3950, -30);
 	skybox::test1(600, 1.5, 13000, iron, ironwall);
 	glPopMatrix();
 
 	glPushMatrix();
-	glTranslated(-35, -3950, 70000);
+	glTranslated(70000, -3950, -30);
 	skybox::test1(600, 1.5, 12000, iron, ironwall);
 	glPopMatrix();
 

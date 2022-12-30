@@ -840,17 +840,17 @@ void skybox::skyboxfirst(int x ,int y, int z ,int front ,int back ,int right ,in
 {
 	
 	
-	glBindTexture(GL_TEXTURE_2D, front);
-	glBegin(GL_QUADS);
-	glTexCoord2d(1, 0);
-	glVertex3d(x, -y, z);
-	glTexCoord2d(0, 0);
-	glVertex3d(x, -y, -z);
-	glTexCoord2d(0, 1);
-	glVertex3d(x, y, -z);
-	glTexCoord2d(1, 1);
-	glVertex3d(x, y, z);
-	glEnd();
+	//glBindTexture(GL_TEXTURE_2D, front);
+	//glBegin(GL_QUADS);
+	//glTexCoord2d(1, 0);
+	//glVertex3d(x, -y, z);
+	//glTexCoord2d(0, 0);
+	//glVertex3d(x, -y, -z);
+	//glTexCoord2d(0, 1);
+	//glVertex3d(x, y, -z);
+	//glTexCoord2d(1, 1);
+	//glVertex3d(x, y, z);
+	//glEnd();
 
 	
 	glBindTexture(GL_TEXTURE_2D, back);
@@ -960,6 +960,86 @@ void skybox::skyboxsecond(int x ,int y, int z ,int front ,int back ,int right ,i
 	glVertex3d(-x, y, z);
 	glEnd();
 
+	/*glBindTexture(GL_TEXTURE_2D, front);
+	glBegin(GL_QUADS);
+	glTexCoord2d(1, 0);
+	glVertex3d(x, -y, z);
+	glTexCoord2d(0, 0);
+	glVertex3d(x, -y, -z);
+	glTexCoord2d(0, 1);
+	glVertex3d(x, y, -z);
+	glTexCoord2d(1, 1);
+	glVertex3d(x, y, z);
+	glEnd();*/
+
+	glBindTexture(GL_TEXTURE_2D, top);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0, 0);
+	glVertex3d(-x, y, -z);
+	glTexCoord2d(1, 0);
+	glVertex3d(x, y, -z);
+	glTexCoord2d(1, 1);
+	glVertex3d(x, y, z);
+	glTexCoord2d(0, 1);
+	glVertex3d(-x, y, z);
+	glEnd();
+
+
+	glBindTexture(GL_TEXTURE_2D, bottm);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0, 0);
+	glVertex3d(-x,-y, -z);
+	glTexCoord2d(1, 0);
+	glVertex3d(x, -y, -z);
+	glTexCoord2d(1, 1);
+	glVertex3d(x, -y, z);
+	glTexCoord2d(0, 1);
+	glVertex3d(-x, -y, z);
+	glEnd();
+
+
+}
+
+void skybox::skyboxthird(int x ,int y, int z ,int front ,int back ,int right ,int left ,int top ,int bottm)
+{
+	//glBindTexture(GL_TEXTURE_2D, back);
+	//glBegin(GL_QUADS);
+	//glTexCoord2d(0, 0);
+	//glVertex3d(-x, -y, z);
+	//glTexCoord2d(1, 0);
+	//glVertex3d(-x, -y, -z);
+	//glTexCoord2d(1, 1);
+	//glVertex3d(-x, y, -z);
+	//glTexCoord2d(0, 1);
+	//glVertex3d(-x, y, z);
+	//glEnd();
+
+
+	glBindTexture(GL_TEXTURE_2D, left);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0, 0);
+	glVertex3d(-x, -y, -z);
+	glTexCoord2d(1, 0);
+	glVertex3d(x, -y, -z);
+	glTexCoord2d(1, 1);
+	glVertex3d(x, y, -z);
+	glTexCoord2d(0, 1);
+	glVertex3d(-x, y, -z);
+	glEnd();
+
+	
+	glBindTexture(GL_TEXTURE_2D, right);
+	glBegin(GL_QUADS);
+	glTexCoord2d(1, 0);
+	glVertex3d(-x, -y, z);
+	glTexCoord2d(0, 0);
+	glVertex3d(x, -y, z);
+	glTexCoord2d(0, 1);
+	glVertex3d(x, y, z);
+	glTexCoord2d(1, 1);
+	glVertex3d(-x, y, z);
+	glEnd();
+
 	glBindTexture(GL_TEXTURE_2D, front);
 	glBegin(GL_QUADS);
 	glTexCoord2d(1, 0);
@@ -999,6 +1079,7 @@ void skybox::skyboxsecond(int x ,int y, int z ,int front ,int back ,int right ,i
 
 
 }
+
 
 void skybox::drawBox4(float x,float y,float z,int image1,int image2,int image3,int image4,int image5,int image6){
 	
